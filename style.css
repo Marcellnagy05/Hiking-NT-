@@ -8,8 +8,8 @@
     position: relative;
 }
 
-#mountain-container{
-    background-image: url("sources/MG.png");
+#Cloud-Container{
+    background-image: url("sources/HG.png");
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -17,13 +17,27 @@
     max-height: 100vh;
 }
 
+#mountain-container{
+    background-image: url("sources/MG.png");
+    width: 100vw;
+    height: 100vh;
+    top: 20%;
+    background-size: cover;
+    object-fit: 60%;
+    max-height: 100vh;
+    min-width:100vw;
+    position: absolute;
+}
+
 
 #container{
     background-image: url("sources/VG.png");
-    position: absolute;
-    top: 25%;
     width: 100vw;
     height: 100vh;
-    background-size: cover;
-    overflow: scroll;
+    top: 45%;
+    background-size: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    min-width:100vw;
+    position: absolute;
 }
