@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#Main-Container{
+    position: relative;
+}
+
+#mountain-container{
+    background-image: url("sources/MG.png");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    position: relative;
+    max-height: 100vh;
+}
+
+
+#container{
+    background-image: url("sources/VG.png");
+    position: absolute;
+    top: 25%;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    overflow: scroll;
+}
