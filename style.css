@@ -1,15 +1,16 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-#Main-Container{
+#Main-Container {
     position: relative;
 }
 
-#Cloud-Container{
+#Cloud-Container {
     background-image: url("sources/HG.png");
+    filter: sepia(30%) hue-rotate(160deg) brightness(80%);
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -17,27 +18,41 @@
     max-height: 100vh;
 }
 
-#mountain-container{
+#mountain-container {
     background-image: url("sources/MG.png");
+    filter: sepia(100%) hue-rotate(180deg);
     width: 100vw;
     height: 100vh;
     top: 20%;
     background-size: cover;
     object-fit: 60%;
     max-height: 100vh;
-    min-width:100vw;
+    min-width: 100vw;
     position: absolute;
 }
 
 
-#container{
+#container {
     background-image: url("sources/VG.png");
+    filter: sepia(100%) hue-rotate(90deg);
     width: 100vw;
     height: 100vh;
-    top: 45%;
+    top: 38%;
     background-size: 100%;
     object-fit: cover;
     background-repeat: no-repeat;
-    min-width:100vw;
+    min-width: 100vw;
     position: absolute;
+}
+
+h1 {
+    position: absolute;
+    max-width: 400px;
+    font-size: 2rem;
+    text-align: center;
+    top: 0%;
+    left: 35%;
+    right: 35%;
+    color: white;
+
 }
