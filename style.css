@@ -4,11 +4,25 @@
     box-sizing: border-box;
 }
 
-#Main-Container {
-    position: relative;
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-height: 100%;
 }
 
-#Cloud-Container {
+html {
+    min-height: 100%;
+}
+
+#Main-Container {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+#cloudContainer {
     background-image: url("sources/HG.png");
     filter: sepia(30%) hue-rotate(160deg) brightness(80%);
     height: 100vh;
@@ -18,31 +32,39 @@
     max-height: 100vh;
 }
 
-#mountain-container {
+#mountainContainer {
     background-image: url("sources/MG.png");
     filter: sepia(100%) hue-rotate(180deg);
-    width: 100vw;
-    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
     top: 20%;
     background-size: cover;
-    object-fit: 60%;
-    max-height: 100vh;
-    min-width: 100vw;
     position: absolute;
 }
 
 
-#container {
-    background-image: url("sources/VG.png");
-    filter: sepia(100%) hue-rotate(90deg);
-    width: 100vw;
-    height: 100vh;
-    top: 38%;
-    background-size: 100%;
-    object-fit: cover;
-    background-repeat: no-repeat;
-    min-width: 100vw;
+#fieldContainer {
+    background-image:url("sources/VG.png");
     position: absolute;
+    filter: sepia(-100%) hue-rotate(10%);
+    min-height:100vh ;
+    min-width: 100vw;
+    top: 38%;
+    background-size: cover;
+}
+
+#fieldContainer::before {
+    content:" ";
+    background:url("sources/VG.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:bottom center;
+    position: absolute;
+    top: -100px;
+    bottom:-100px;
+    left:-100px;
+    right:-100px;
+    z-index: -1;
 }
 
 h1 {
@@ -50,9 +72,89 @@ h1 {
     max-width: 400px;
     font-size: 2rem;
     text-align: center;
-    top: 0%;
+    top: 15%;
     left: 35%;
     right: 35%;
     color: white;
+    
+}
 
+
+/*Paragraphs*/
+#paragraphOneContainer{
+    display: grid;
+    grid-template-areas: "paragraph picture";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1fr;
+    column-gap: 5vw;
+    position: absolute;
+    left: 10vw;
+    top: 60%;
+}
+
+#paragraphOneImg{
+    width: 15vw;
+    grid-area: picture;
+}
+
+#paragraphOne{
+    margin-left: 10vw;
+    margin-top: 20%;
+}
+
+#paragraphOneContainer > img{
+    animation: fade-in linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 700px;
+}
+
+.paragraphNav{
+    display: flex;
+    align-items: center;
+}
+
+.paragraphNum{
+    position: absolute;
+    font-family: "Madimi One", sans-serif;
+    font-size: 8rem;
+    color: white;
+    z-index: 3;
+}
+
+hr{
+    width: 50px;
+    margin-right:15px ;
+}
+
+.intro{
+    text-transform: uppercase;
+}
+
+.intro,hr{
+    display: inline-block;
+    color: rgb(244, 173, 42);
+}
+
+h2, .paragraphs{
+    color: white;
+}
+
+h2{
+    font-size: 2.5em;
+}
+
+.paragraphs{
+    font-size: 0.8em;
+    width: 25vw;
+}
+
+
+
+/*Animations*/
+
+
+@keyframes fade-in{
+    from{ scale: 0.8; opacity: 0;}
+    to{scale: 1; opacity: 1;}
 }
