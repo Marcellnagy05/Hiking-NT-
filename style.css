@@ -47,10 +47,9 @@ html {
     background-image:url("sources/VG.png");
     position: absolute;
     filter: sepia(-100%) hue-rotate(10%);
-    min-height:100vh ;
+    min-height: 150vh;
     min-width: 100vw;
     top: 38%;
-    background-size: cover;
 }
 
 #fieldContainer::before {
@@ -93,7 +92,7 @@ h1 {
 }
 
 #paragraphOneImg{
-    width: 15vw;
+    width: 20vw;
     grid-area: picture;
 }
 
@@ -102,33 +101,39 @@ h1 {
     margin-top: 20%;
 }
 
-#paragraphOneContainer > img{
-    animation: fade-in linear;
-    animation-timeline: view();
-    animation-range-start: cover;
-    animation-range-end: 700px;
+img{
 }
 
-.paragraphNav{
-    display: flex;
-    align-items: center;
-}
 
 .paragraphNum{
     position: absolute;
     font-family: "Madimi One", sans-serif;
     font-size: 8rem;
     color: white;
-    z-index: 3;
+    bottom: 50%;
+    right: 84.5%;
+    opacity: 0.2;
+    z-index: 0;
 }
 
 hr{
-    width: 50px;
-    margin-right:15px ;
+    position: relative;
+    z-index: 1000;
+    width: 3.3vw;
+    margin-right:15px;
+    margin-bottom: 0.75vh;
+}
+
+.paragraphTitle{
+    position: relative;
+    z-index: 10000;
 }
 
 .intro{
+    position: relative;
     text-transform: uppercase;
+    font-size: 1rem;
+    z-index: 100;
 }
 
 .intro,hr{
@@ -136,12 +141,17 @@ hr{
     color: rgb(244, 173, 42);
 }
 
+.intro,hr,.paragraphTitle,.paragraphNum,.paragraphs{
+    margin-top: 2vh;
+}
+
 h2, .paragraphs{
     color: white;
 }
 
-h2{
-    font-size: 2.5em;
+.paragraphNav > h2{
+    font-size: 2em;
+    z-index: 10000;
 }
 
 .paragraphs{
@@ -154,7 +164,7 @@ h2{
 /*Animations*/
 
 
-@keyframes fade-in{
+@keyframes fade{
     from{ scale: 0.8; opacity: 0;}
     to{scale: 1; opacity: 1;}
 }
